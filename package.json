@@ -1,0 +1,31 @@
+{
+  "name": "workday-application-framework",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "scss": "sass --watch src/scss/style.scss:workday/assets/css/style.css",
+    "serve": "lite-server --baseDir=workday",
+    "start": "concurrently \"npm run scss\" \"npm run serve\""
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Dank-Heehaw/Workday-Application-Framework.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "type": "commonjs",
+  "bugs": {
+    "url": "https://github.com/Dank-Heehaw/Workday-Application-Framework/issues"
+  },
+  "homepage": "https://github.com/Dank-Heehaw/Workday-Application-Framework#readme",
+  "devDependencies": {
+    "concurrently": "^9.2.1",
+    "lite-server": "^2.6.1",
+    "sass": "^1.98.0"
+  },
+  "dependencies": {
+    "scss": "^0.2.4"
+  }
+}
