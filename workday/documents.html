@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Workday - Documents</title>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="assets/css/style.css">
+</head>
+<body>
+
+<div class="screen active" id="screen-3">
+  <nav>
+    <a class="nav-logo" href="index.html" aria-label="Go to home">
+      <img class="nav-logo-img" src="assets/images/Workday_Logo_0.svg" alt="Workday">
+    </a>
+    <div class="nav-links">
+      <button type="button" class="nav-link-btn" onclick="goTo(2)">&larr; Back</button>
+      <button type="button" class="nav-link-btn" onclick="goTo(4)">My Applications</button>
+    </div>
+  </nav>
+
+  <div class="progress-bar-wrap">
+    <div class="progress-steps">
+      <div class="step-item done">
+        <div class="step-circle">✓</div>
+        <span class="step-label">Your Info</span>
+      </div>
+      <div class="step-item active">
+        <div class="step-circle">2</div>
+        <span class="step-label">Documents</span>
+      </div>
+      <div class="step-item">
+        <div class="step-circle">3</div>
+        <span class="step-label">Review</span>
+      </div>
+      <div class="step-item">
+        <div class="step-circle">4</div>
+        <span class="step-label">Submit</span>
+      </div>
+    </div>
+  </div>
+
+  <div class="main-narrow">
+    <div class="profile-import-card">
+      <div class="profile-import-info">
+        <h4>Workday Sana prep completed</h4>
+        <p>Workday Sana analyzed your profile, pre-filled your latest resume, and flagged missing content based on this role.</p>
+      </div>
+      <button class="btn-primary btn-import" onclick="showToast('Workday Sana analysis refreshed')">Run Sana Check</button>
+    </div>
+
+    <div class="form-section">
+      <div class="section-title">How Workday Sana is Helping</div>
+      <div class="uploaded-file">
+        <div class="file-icon" aria-hidden="true">
+          <img src="assets/images/wd-icon-document-alt.svg" alt="">
+        </div>
+        <div class="file-info">
+          <div class="file-name">Resume readiness score: 87%</div>
+          <div class="file-size">Sana suggests adding measurable impact metrics and one accessibility project highlight.</div>
+        </div>
+      </div>
+      <div class="uploaded-file">
+        <div class="file-icon" aria-hidden="true">
+          <img src="assets/images/wd-icon-upload.svg" alt="">
+        </div>
+        <div class="file-info">
+          <div class="file-name">Keyword alignment review</div>
+          <div class="file-size">Matched: UX research, Figma, prototyping. Missing: design systems governance.</div>
+        </div>
+      </div>
+    </div>
+
+    <div class="form-section">
+      <div class="section-title">Résumé / CV <span class="text-orange">*</span></div>
+      <div class="uploaded-file">
+        <div class="file-icon" aria-hidden="true">
+          <img src="assets/images/wd-icon-document-alt.svg" alt="">
+        </div>
+        <div class="file-info">
+          <div class="file-name">Alex_Johnson_Resume_2026.pdf</div>
+          <div class="file-size">PDF · 284 KB · Imported and parsed by Workday Sana</div>
+        </div>
+        <div class="file-check">✓</div>
+      </div>
+      <div class="upload-zone" onclick="showToast('File picker opened')">
+        <div class="upload-icon" aria-hidden="true">
+          <img src="assets/images/wd-icon-upload-cloud.svg" alt="">
+        </div>
+        <div class="upload-title">Replace or Upload New Résumé</div>
+        <div class="upload-sub">Drag and drop your file, then let Workday Sana re-score and re-map skills</div>
+        <div class="upload-formats">Accepted: PDF, DOCX, RTF · Max size: 10 MB</div>
+      </div>
+    </div>
+
+    <div class="form-section">
+      <div class="section-title">Portfolio (Recommended)</div>
+      <div class="form-group">
+        <label class="form-label">Portfolio URL</label>
+        <input class="form-input" type="url" placeholder="https://yourportfolio.com" value="https://alexjohnson.design">
+        <span class="form-hint">Sana uses this to summarize project themes and align them with job requirements.</span>
+      </div>
+      <div class="upload-zone" onclick="showToast('File picker opened')">
+        <div class="upload-icon" aria-hidden="true">
+          <img src="assets/images/wd-icon-folder-plus.svg" alt="">
+        </div>
+        <div class="upload-title">Upload Portfolio PDF</div>
+        <div class="upload-sub">Upload a curated PDF and Sana will auto-generate project talking points</div>
+        <div class="upload-formats">Accepted: PDF · Max size: 25 MB</div>
+      </div>
+    </div>
+
+    <div class="form-section">
+      <div class="section-title">Cover Letter (Optional)</div>
+      <div class="upload-zone" onclick="showToast('File picker opened')">
+        <div class="upload-icon" aria-hidden="true">
+          <img src="assets/images/wd-icon-mail.svg" alt="">
+        </div>
+        <div class="upload-title">Upload Cover Letter</div>
+        <div class="upload-sub">Sana can suggest improvements for tone, clarity, and role alignment after upload</div>
+        <div class="upload-formats">Accepted: PDF, DOCX · Max size: 5 MB</div>
+      </div>
+    </div>
+
+    <div class="form-actions">
+      <button class="btn-ghost" onclick="goTo(2)">&larr; Back</button>
+      <button class="btn-primary" onclick="goTo(5)">Submit Application &rarr;</button>
+    </div>
+  </div>
+</div>
+
+<div class="toast" id="toast">
+  <div class="toast-dot"></div>
+  <span id="toast-msg">Done!</span>
+</div>
+
+<script src="assets/js/script.js"></script>
+</body>
+</html>

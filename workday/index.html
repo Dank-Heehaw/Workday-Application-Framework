@@ -9,18 +9,21 @@
 </head>
 <body>
 
-<!-- ══════════════════════════════════════════
-     SCREEN 1: JOB SEARCH
-══════════════════════════════════════════ -->
+<div class="workday-top-stripe" aria-hidden="true">
+  <span class="stripe-yellow"></span>
+  <span class="stripe-orange"></span>
+  <span class="stripe-blue"></span>
+</div>
+
 <div class="screen active" id="screen-1">
   <nav>
-    <div class="nav-logo">
+    <a class="nav-logo" href="index.html" aria-label="Go to home">
       <img class="nav-logo-img" src="assets/images/Workday_Logo_0.svg" alt="Workday">
-    </div>
+    </a>
     <div class="nav-links">
       <button type="button" class="nav-link-btn" onclick="goTo(4)">My Applications</button>
-      <button type="button" class="nav-link-btn">Profile</button>
-      <button class="nav-btn">Sign In</button>
+      <button type="button" class="nav-link-btn" onclick="goTo(6)">Profile</button>
+      <button class="nav-btn js-signin-trigger" type="button" onclick="toggleSignInModal(true)">Sign In</button>
     </div>
   </nav>
 
@@ -28,10 +31,16 @@
     <h1 class="hero-title">Find your <em>next role.</em></h1>
     <p class="hero-sub">Explore Workday and Workday customer opportunities in one streamlined experience.</p>
     <form class="search-bar" role="search">
-      <svg width="18" height="18" fill="none" viewBox="0 0 24 24" stroke="#B0B5C3" stroke-width="2"><circle cx="11" cy="11" r="8"/><path d="M21 21l-4.35-4.35"/></svg>
-      <input type="text" aria-label="Search jobs" placeholder="Job title, keyword, or company" value="UX Designer">
+      <div class="search-segment">
+        <svg width="18" height="18" fill="none" viewBox="0 0 24 24" stroke="#B0B5C3" stroke-width="2" aria-hidden="true"><circle cx="11" cy="11" r="8"/><path d="M21 21l-4.35-4.35"/></svg>
+        <input type="text" aria-label="Search jobs" placeholder="Job title, keyword, or company" value="UX Designer">
+      </div>
       <div class="search-divider"></div>
-      <input type="text" aria-label="Search location" placeholder="Location" value="Toronto, ON">
+      <div class="search-segment">
+        <svg width="18" height="18" fill="none" viewBox="0 0 24 24" stroke="#B0B5C3" stroke-width="2" aria-hidden="true"><path d="M12 22s7-4.35 7-11a7 7 0 1 0-14 0c0 6.65 7 11 7 11z"/><circle cx="12" cy="11" r="2.6"/></svg>
+        <input type="text" aria-label="Search location" placeholder="Location" value="Toronto, ON">
+      </div>
+      <div class="search-divider"></div>
       <button type="button" class="btn-primary btn-search">Search</button>
     </form>
   </header>
@@ -57,7 +66,6 @@
     </div>
 
     <section class="job-grid" aria-label="Available UX design jobs">
-
       <article class="job-card">
         <div class="job-card-header">
           <img class="company-logo-img" src="assets/images/Workday_Logo_0.svg" alt="Workday logo">
@@ -133,375 +141,77 @@
           <button type="button" class="btn-secondary btn-job-action">View Job</button>
         </div>
       </article>
-
     </section>
   </div>
 </div>
 
-<!-- ══════════════════════════════════════════
-     SCREEN 2: APPLICATION FORM
-══════════════════════════════════════════ -->
-<div class="screen" id="screen-2">
-  <nav>
-    <div class="nav-logo">
-      <img class="nav-logo-img" src="assets/images/Workday_Logo_0.svg" alt="Workday">
-    </div>
-    <div class="nav-links">
-      <button type="button" class="nav-link-btn" onclick="goTo(1)">← Back to Search</button>
-      <button type="button" class="nav-link-btn" onclick="goTo(4)">My Applications</button>
-    </div>
-  </nav>
+<div class="signin-modal" id="signin-modal" aria-hidden="true">
+  <div class="signin-modal-dialog" role="dialog" aria-modal="true" aria-label="Workday sign in">
+    <button class="signin-close-btn" type="button" onclick="toggleSignInModal(false)" aria-label="Close sign in">×</button>
 
-  <div class="progress-bar-wrap">
-    <div class="progress-steps">
-      <div class="step-item active">
-        <div class="step-circle">1</div>
-        <span class="step-label">Your Info</span>
-      </div>
-      <div class="step-item">
-        <div class="step-circle">2</div>
-        <span class="step-label">Documents</span>
-      </div>
-      <div class="step-item">
-        <div class="step-circle">3</div>
-        <span class="step-label">Review</span>
-      </div>
-      <div class="step-item">
-        <div class="step-circle">4</div>
-        <span class="step-label">Submit</span>
-      </div>
+    <div class="signin-view active" id="signin-social-view">
+      <img class="signin-logo" src="assets/images/Workday_Logo_0.svg" alt="Workday">
+      <h2>Sign In</h2>
+      <p class="signin-copy">Welcome! Create an account to manage your applications with us. Account creation and use is subject to the <span class="signin-hover-text">Workday Recruitment Privacy Statement</span>.</p>
+
+      <button type="button" class="signin-provider-btn">
+        <span class="signin-provider-icon" aria-hidden="true">
+          <svg viewBox="0 0 24 24" role="img" focusable="false">
+            <path fill="currentColor" d="M16.37 12.17c.03 3.15 2.76 4.2 2.79 4.21-.02.07-.43 1.51-1.42 2.98-.86 1.27-1.75 2.54-3.17 2.57-1.39.03-1.84-.82-3.43-.82-1.59 0-2.09.8-3.41.85-1.37.05-2.41-1.37-3.27-2.63-1.76-2.56-3.1-7.22-1.29-10.38.9-1.57 2.5-2.56 4.24-2.59 1.32-.03 2.57.89 3.43.89.86 0 2.47-1.09 4.16-.93.71.03 2.7.29 3.98 2.15-.1.06-2.38 1.4-2.36 4.7zM14.11 4.84c.72-.87 1.2-2.08 1.06-3.29-1.03.04-2.27.69-3.01 1.56-.66.76-1.24 1.98-1.08 3.15 1.16.09 2.32-.59 3.03-1.42z"/>
+          </svg>
+        </span>
+        <span>Sign in with Apple</span>
+      </button>
+      <button type="button" class="signin-provider-btn">
+        <span class="signin-provider-icon" aria-hidden="true">
+          <svg viewBox="0 0 24 24" role="img" focusable="false">
+            <path d="M21.35 12.2c0-.7-.06-1.22-.2-1.77H12v3.34h5.37c-.11.83-.71 2.09-2.05 2.93l-.02.11 2.72 2.11.19.02c1.76-1.63 2.78-4.03 2.78-6.74z" fill="#4285F4"/>
+            <path d="M12 21.72c2.63 0 4.84-.87 6.45-2.38l-3.08-2.39c-.82.57-1.92.97-3.37.97-2.58 0-4.77-1.69-5.56-4.03l-.1.01-2.83 2.19-.03.09c1.6 3.18 4.9 5.54 8.52 5.54z" fill="#34A853"/>
+            <path d="M6.44 13.89c-.21-.62-.34-1.28-.34-1.97 0-.68.12-1.34.33-1.97l-.01-.13-2.86-2.23-.09.04A9.7 9.7 0 0 0 2.4 11.92c0 1.57.38 3.05 1.06 4.36l2.98-2.39z" fill="#FBBC05"/>
+            <path d="M12 5.93c1.83 0 3.06.79 3.76 1.45l2.75-2.68C16.83 3.13 14.63 2.12 12 2.12c-3.62 0-6.92 2.36-8.53 5.54l2.97 2.32c.8-2.34 2.99-4.05 5.56-4.05z" fill="#EA4335"/>
+          </svg>
+        </span>
+        <span>Sign in with Google</span>
+      </button>
+
+      <div class="signin-divider"><span>OR</span></div>
+      <button type="button" class="signin-email-btn" onclick="showEmailSignIn()">Sign in with email</button>
     </div>
-  </div>
 
-  <div class="main-narrow">
-    <section class="job-banner" aria-label="Selected job details">
-      <div class="job-banner-info">
-        <h2>Senior UX Designer</h2>
-        <p>Workday · Toronto, ON · Hybrid</p>
-      </div>
-      <div class="job-banner-tags">
-        <span class="tag tag-banner-salary">$90–115K</span>
-      </div>
-    </section>
+    <div class="signin-view" id="signin-email-view">
+      <img class="signin-logo" src="assets/images/Workday_Logo_0.svg" alt="Workday">
+      <h2>Sign In</h2>
 
-    <div class="form-section">
-      <div class="section-title">Personal Information</div>
-      <div class="form-row">
-        <div class="form-group">
-          <label class="form-label">First Name <span class="required">*</span></label>
-          <input class="form-input" type="text" placeholder="Alex" value="Alex">
-        </div>
-        <div class="form-group">
-          <label class="form-label">Last Name <span class="required">*</span></label>
-          <input class="form-input" type="text" placeholder="Johnson" value="Johnson">
-        </div>
-      </div>
       <div class="form-group">
-        <label class="form-label">Email Address <span class="required">*</span></label>
-        <input class="form-input" type="email" placeholder="alex@email.com" value="alex.johnson@email.com">
+        <label class="form-label" for="modal-email">Email Address <span class="required">*</span></label>
+        <input id="modal-email" class="form-input demo-locked-input" type="email" placeholder="Email auto-fills on Sign In click" readonly tabindex="-1">
       </div>
-      <div class="form-row">
-        <div class="form-group">
-          <label class="form-label">Phone Number</label>
-          <input class="form-input" type="tel" placeholder="+1 (416) 000-0000">
-        </div>
-        <div class="form-group">
-          <label class="form-label">LinkedIn URL</label>
-          <input class="form-input" type="url" placeholder="linkedin.com/in/your-name">
-        </div>
+
+      <div class="form-group">
+        <label class="form-label" for="modal-password">Password <span class="required">*</span></label>
+        <input id="modal-password" class="form-input demo-locked-input" type="password" placeholder="Password auto-fills on Sign In click" readonly tabindex="-1">
       </div>
+
+      <button class="btn-primary signin-submit" type="button" onclick="runModalSignInDemo(this)">Sign In</button>
+      <p class="signin-text-line"><span class="signin-hover-text">Don't have an account yet? Create Account</span></p>
+      <p class="signin-text-line"><span class="signin-hover-text">Forgot your password?</span></p>
     </div>
 
-    <div class="form-section">
-      <div class="section-title">Work Eligibility</div>
-      <div class="form-group">
-        <label class="form-label">Are you legally authorized to work in Canada? <span class="required">*</span></label>
-        <select class="form-input">
-          <option>Yes, I am a citizen or permanent resident</option>
-          <option>Yes, I hold a valid work permit</option>
-          <option>No, I require sponsorship</option>
-        </select>
-      </div>
-      <div class="form-group">
-        <label class="form-label">Earliest Start Date <span class="required">*</span></label>
-        <input class="form-input" type="date">
-        <span class="form-hint">We'll try to accommodate your availability.</span>
-      </div>
-    </div>
-
-    <div class="form-section">
-      <div class="section-title">Cover Letter (Optional)</div>
-      <div class="form-group">
-        <label class="form-label">Why do you want this role?</label>
-        <textarea class="form-input" placeholder="Tell us what excites you about this opportunity and what you'd bring to the team..."></textarea>
-        <span class="form-hint">250–500 words recommended. You can also skip this and upload a cover letter on the next step.</span>
-      </div>
-    </div>
-
-    <div class="form-actions">
-      <button class="btn-ghost" onclick="goTo(1)">← Back</button>
-      <button class="btn-primary" onclick="goTo(3)">Continue to Documents →</button>
+    <div class="signin-legal-text">
+      <span class="signin-hover-text">Help Center</span>
+      <span>·</span>
+      <span class="signin-hover-text">Legal</span>
+      <span>·</span>
+      <span class="signin-hover-text">Privacy</span>
+      <span>·</span>
+      <span class="signin-hover-text">Your Privacy Choices</span>
+      <span>·</span>
+      <span class="signin-hover-text">Cookie Preferences</span>
+      <span class="signin-copyright">© 2026 Workday, Inc.</span>
     </div>
   </div>
 </div>
 
-<!-- ══════════════════════════════════════════
-     SCREEN 3: DOCUMENT UPLOAD
-══════════════════════════════════════════ -->
-<div class="screen" id="screen-3">
-  <nav>
-    <div class="nav-logo">
-      <img class="nav-logo-img" src="assets/images/Workday_Logo_0.svg" alt="Workday">
-    </div>
-    <div class="nav-links">
-      <button type="button" class="nav-link-btn" onclick="goTo(2)">← Back</button>
-      <button type="button" class="nav-link-btn" onclick="goTo(4)">My Applications</button>
-    </div>
-  </nav>
-
-  <div class="progress-bar-wrap">
-    <div class="progress-steps">
-      <div class="step-item done">
-        <div class="step-circle">✓</div>
-        <span class="step-label">Your Info</span>
-      </div>
-      <div class="step-item active">
-        <div class="step-circle">2</div>
-        <span class="step-label">Documents</span>
-      </div>
-      <div class="step-item">
-        <div class="step-circle">3</div>
-        <span class="step-label">Review</span>
-      </div>
-      <div class="step-item">
-        <div class="step-circle">4</div>
-        <span class="step-label">Submit</span>
-      </div>
-    </div>
-  </div>
-
-  <div class="main-narrow">
-    <div class="profile-import-card">
-      <div class="profile-import-info">
-        <h4>Import from your Workday Profile</h4>
-        <p>Your resume and portfolio from a previous application are saved and ready to use.</p>
-      </div>
-      <button class="btn-primary btn-import" onclick="showToast('Profile imported successfully!')">Import Now</button>
-    </div>
-
-    <div class="form-section">
-      <div class="section-title">Résumé / CV <span class="text-orange">*</span></div>
-      <div class="uploaded-file">
-        <div class="file-icon">📄</div>
-        <div class="file-info">
-          <div class="file-name">Alex_Johnson_Resume_2026.pdf</div>
-          <div class="file-size">PDF · 284 KB · Uploaded from profile</div>
-        </div>
-        <div class="file-check">✓</div>
-      </div>
-      <div class="upload-zone" onclick="showToast('File picker opened')">
-        <div class="upload-icon">📎</div>
-        <div class="upload-title">Replace or Upload New Résumé</div>
-        <div class="upload-sub">Drag & drop your file here, or click to browse</div>
-        <div class="upload-formats">Accepted: PDF, DOCX, RTF · Max size: 10 MB</div>
-      </div>
-    </div>
-
-    <div class="form-section">
-      <div class="section-title">Portfolio (Recommended)</div>
-      <div class="form-group">
-        <label class="form-label">Portfolio URL</label>
-        <input class="form-input" type="url" placeholder="https://yourportfolio.com" value="https://alexjohnson.design">
-        <span class="form-hint">Behance, Dribbble, personal website, or any public URL.</span>
-      </div>
-      <div class="upload-zone" onclick="showToast('File picker opened')">
-        <div class="upload-icon">🗂️</div>
-        <div class="upload-title">Upload Portfolio PDF</div>
-        <div class="upload-sub">Or upload a curated PDF of your work</div>
-        <div class="upload-formats">Accepted: PDF · Max size: 25 MB</div>
-      </div>
-    </div>
-
-    <div class="form-section">
-      <div class="section-title">Cover Letter (Optional)</div>
-      <div class="upload-zone" onclick="showToast('File picker opened')">
-        <div class="upload-icon">✉️</div>
-        <div class="upload-title">Upload Cover Letter</div>
-        <div class="upload-sub">Skip this if you wrote one in the previous step</div>
-        <div class="upload-formats">Accepted: PDF, DOCX · Max size: 5 MB</div>
-      </div>
-    </div>
-
-    <div class="form-actions">
-      <button class="btn-ghost" onclick="goTo(2)">← Back</button>
-      <button class="btn-primary" onclick="goTo(5)">Submit Application →</button>
-    </div>
-  </div>
-</div>
-
-<!-- ══════════════════════════════════════════
-     SCREEN 4: PROGRESS TRACKER
-══════════════════════════════════════════ -->
-<div class="screen" id="screen-4">
-  <nav>
-    <div class="nav-logo">
-      <img class="nav-logo-img" src="assets/images/Workday_Logo_0.svg" alt="Workday">
-    </div>
-    <div class="nav-links">
-      <button type="button" class="nav-link-btn" onclick="goTo(1)">Browse Jobs</button>
-      <button type="button" class="nav-link-btn">Profile</button>
-      <button class="nav-btn">Alex J.</button>
-    </div>
-  </nav>
-
-  <div class="tracker-hero">
-    <h2>My Applications</h2>
-    <p>Track the status of all your applications in one place.</p>
-  </div>
-
-  <div class="main">
-    <div class="tracker-grid">
-      <div class="stat-card">
-        <div class="stat-num">4</div>
-        <div class="stat-label">Applications Submitted</div>
-      </div>
-      <div class="stat-card stat-card-blue">
-        <div class="stat-num">1</div>
-        <div class="stat-label">Interview Scheduled</div>
-      </div>
-    </div>
-
-    <h3 class="section-title" id="active-applications-title">Active Applications</h3>
-
-    <section aria-labelledby="active-applications-title">
-    <article class="application-item application-item-active">
-      <img class="app-company-logo-img" src="assets/images/Workday_Logo_0.svg" alt="Workday logo">
-      <div class="app-info">
-        <div class="app-title">Senior UX Designer</div>
-        <div class="app-company">Workday · Toronto, ON</div>
-        <div class="app-date">Applied March 19, 2026</div>
-      </div>
-      <div class="app-status">
-        <span class="tag tag-orange app-status-tag">Under Review</span>
-        <div class="app-status-date">Est. response: Mar 26</div>
-      </div>
-    </article>
-
-    <article class="application-item">
-      <img class="app-company-logo-img" src="assets/images/CIBC_logo_2021.svg" alt="CIBC logo">
-      <div class="app-info">
-        <div class="app-title">UX/Product Designer</div>
-        <div class="app-company">CIBC · Toronto, ON</div>
-        <div class="app-date">Applied March 14, 2026</div>
-      </div>
-      <div class="app-status">
-        <span class="tag tag-green app-status-tag">Interview Booked</span>
-        <div class="app-status-date">Mar 22 @ 2:00 PM</div>
-      </div>
-    </article>
-    </section>
-
-    <section class="card timeline-card" aria-label="Application timeline">
-      <h3 class="section-title">Application Timeline — Senior UX Designer @ Workday</h3>
-      <div class="status-timeline">
-        <div class="timeline-item done">
-          <div class="timeline-dot">✓</div>
-          <div class="timeline-content">
-            <h4>Application Submitted</h4>
-            <p>Your application was received and is in the queue.</p>
-            <div class="timeline-date">March 19, 2026</div>
-          </div>
-        </div>
-        <div class="timeline-item done">
-          <div class="timeline-dot">✓</div>
-          <div class="timeline-content">
-            <h4>Application Reviewed</h4>
-            <p>A recruiter has reviewed your profile and resume.</p>
-            <div class="timeline-date">March 21, 2026</div>
-          </div>
-        </div>
-        <div class="timeline-item active">
-          <div class="timeline-dot timeline-dot-sm">●</div>
-          <div class="timeline-content">
-            <h4>Hiring Manager Review</h4>
-            <p>Your application is now with the hiring team.</p>
-            <div class="timeline-date">In progress</div>
-          </div>
-        </div>
-        <div class="timeline-item">
-          <div class="timeline-dot">4</div>
-          <div class="timeline-content">
-            <h4>Interview Invitation</h4>
-            <p>You'll be contacted to schedule a first-round interview.</p>
-            <div class="timeline-date">Upcoming</div>
-          </div>
-        </div>
-        <div class="timeline-item">
-          <div class="timeline-dot">5</div>
-          <div class="timeline-content">
-            <h4>Final Decision</h4>
-            <p>Offer or next steps communicated.</p>
-            <div class="timeline-date">Upcoming</div>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <div class="tracker-actions">
-      <button class="btn-primary" onclick="goTo(1)">Browse More Jobs →</button>
-    </div>
-  </div>
-</div>
-
-<!-- ══════════════════════════════════════════
-     SCREEN 5: CONFIRMATION
-══════════════════════════════════════════ -->
-<div class="screen" id="screen-5">
-  <nav>
-    <div class="nav-logo">
-      <img class="nav-logo-img" src="assets/images/Workday_Logo_0.svg" alt="Workday">
-    </div>
-    <div class="nav-links">
-      <button type="button" class="nav-link-btn" onclick="goTo(4)">My Applications</button>
-      <button type="button" class="nav-link-btn" onclick="goTo(1)">Browse Jobs</button>
-    </div>
-  </nav>
-
-  <div class="confirm-wrap">
-    <div class="confirm-icon">🎉</div>
-    <h1 class="confirm-title">Application Submitted!</h1>
-    <p class="confirm-sub">Your application for <strong>Senior UX Designer at Workday</strong> has been received. We'll be in touch soon.</p>
-    <div class="confirm-ref">
-      <div class="confirm-ref-label">Your Application Reference</div>
-      <div class="confirm-ref-num">WD-2026-84721</div>
-    </div>
-
-    <div class="confirm-steps">
-      <div class="confirm-step">
-        <div class="confirm-step-icon">📧</div>
-        <h4>Confirmation Sent</h4>
-        <p>A confirmation email has been sent to alex.johnson@email.com</p>
-      </div>
-      <div class="confirm-step">
-        <div class="confirm-step-icon">👀</div>
-        <h4>Review Period</h4>
-        <p>Expect a response within 5–7 business days of your application.</p>
-      </div>
-      <div class="confirm-step">
-        <div class="confirm-step-icon">📊</div>
-        <h4>Track Progress</h4>
-        <p>Monitor your application status live in your dashboard.</p>
-      </div>
-    </div>
-
-    <div class="confirm-actions">
-      <button class="btn-primary" onclick="goTo(4)">Track My Application →</button>
-      <button class="btn-secondary" onclick="goTo(1)">Browse More Jobs</button>
-    </div>
-  </div>
-</div>
-
-<!-- ── TOAST ── -->
 <div class="toast" id="toast">
   <div class="toast-dot"></div>
   <span id="toast-msg">Done!</span>

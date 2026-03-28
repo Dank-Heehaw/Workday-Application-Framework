@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Workday - Profile</title>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="assets/css/style.css">
+</head>
+<body>
+
+<div class="screen active" id="screen-6">
+  <nav>
+    <a class="nav-logo" href="index.html" aria-label="Go to home">
+      <img class="nav-logo-img" src="assets/images/Workday_Logo_0.svg" alt="Workday">
+    </a>
+    <div class="nav-links">
+      <button type="button" class="nav-link-btn" onclick="goTo(1)">Browse Jobs</button>
+      <button type="button" class="nav-link-btn" onclick="goTo(4)">My Applications</button>
+      <button class="nav-btn">Alex J.</button>
+    </div>
+  </nav>
+
+  <div class="tracker-hero">
+    <h2>My Profile</h2>
+    <p>Manage your details and preferences for faster applications.</p>
+  </div>
+
+  <div class="main-narrow">
+    <div class="form-section">
+      <div class="section-title">Profile Image</div>
+      <div class="profile-photo-card">
+        <div class="profile-photo-avatar" aria-hidden="true">AJ</div>
+        <div class="profile-photo-info">
+          <h4>Candidate profile photo</h4>
+          <p>Upload a clear headshot so recruiters can quickly identify your profile across applications.</p>
+        </div>
+        <button class="btn-ghost profile-photo-btn" onclick="showToast('Image upload started')">Upload Image</button>
+      </div>
+      <span class="form-hint">Recommended: JPG or PNG, square crop, up to 5 MB.</span>
+    </div>
+
+    <div class="form-section">
+      <div class="section-title">Profile Information</div>
+      <div class="form-row">
+        <div class="form-group">
+          <label class="form-label">First Name</label>
+          <input class="form-input" type="text" value="Alex">
+        </div>
+        <div class="form-group">
+          <label class="form-label">Last Name</label>
+          <input class="form-input" type="text" value="Johnson">
+        </div>
+      </div>
+      <div class="form-row">
+        <div class="form-group">
+          <label class="form-label">Email</label>
+          <input class="form-input" type="email" value="alex.johnson@email.com">
+        </div>
+        <div class="form-group">
+          <label class="form-label">Phone</label>
+          <input class="form-input" type="tel" value="+1 (416) 000-0000">
+        </div>
+      </div>
+      <div class="form-group">
+        <label class="form-label">Location</label>
+        <input class="form-input" type="text" value="Toronto, ON">
+      </div>
+    </div>
+
+    <div class="form-section">
+      <div class="section-title">Professional Links</div>
+      <div class="form-group">
+        <label class="form-label">LinkedIn</label>
+        <input class="form-input" type="url" value="https://linkedin.com/in/alexjohnson">
+      </div>
+      <div class="form-group">
+        <label class="form-label">Portfolio</label>
+        <input class="form-input" type="url" value="https://alexjohnson.design">
+      </div>
+    </div>
+
+    <div class="form-section">
+      <div class="section-title">Preferences</div>
+      <div class="form-group">
+        <label class="form-label">Preferred Work Type</label>
+        <select class="form-input">
+          <option>Hybrid</option>
+          <option>Remote</option>
+          <option>On-site</option>
+        </select>
+      </div>
+      <div class="form-group">
+        <label class="form-label">Target Salary Range</label>
+        <input class="form-input" type="text" value="$90K - $120K">
+      </div>
+    </div>
+
+    <div class="form-section">
+      <div class="section-title">Next Step: Build Better Applications with Workday Sana</div>
+      <div class="sana-next-step">
+        <div class="sana-next-step-info">
+          <h4>Powered by Workday Sana AI</h4>
+          <p>Create a tailored resume draft and upload your career history in one flow, then reuse it in future applications.</p>
+        </div>
+        <div class="sana-next-step-actions">
+          <button class="btn-primary" onclick="showToast('Opening Workday Sana Resume Builder')">Open Resume Builder</button>
+          <button class="btn-ghost" onclick="showToast('Career info upload started')">Upload Career Info</button>
+        </div>
+      </div>
+    </div>
+
+    <div class="form-actions">
+      <button class="btn-ghost" onclick="goTo(1)">&larr; Back to Jobs</button>
+      <button class="btn-primary" onclick="showToast('Profile updated successfully!')">Save Changes</button>
+    </div>
+  </div>
+</div>
+
+<div class="toast" id="toast">
+  <div class="toast-dot"></div>
+  <span id="toast-msg">Done!</span>
+</div>
+
+<script src="assets/js/script.js"></script>
+</body>
+</html>

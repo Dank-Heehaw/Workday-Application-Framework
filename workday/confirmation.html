@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Workday - Confirmation</title>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="assets/css/style.css">
+</head>
+<body>
+
+<div class="screen active" id="screen-5">
+  <nav>
+    <a class="nav-logo" href="index.html" aria-label="Go to home">
+      <img class="nav-logo-img" src="assets/images/Workday_Logo_0.svg" alt="Workday">
+    </a>
+    <div class="nav-links">
+      <button type="button" class="nav-link-btn" onclick="goTo(4)">My Applications</button>
+      <button type="button" class="nav-link-btn" onclick="goTo(1)">Browse Jobs</button>
+    </div>
+  </nav>
+
+  <div class="confirm-wrap">
+    <div class="confirm-icon">🎉</div>
+    <h1 class="confirm-title">Application Submitted!</h1>
+    <p class="confirm-sub">Your application for <strong>Senior UX Designer at Workday</strong> has been received. We'll be in touch soon.</p>
+    <div class="confirm-ref">
+      <div class="confirm-ref-label">Your Application Reference</div>
+      <div class="confirm-ref-num">WD-2026-84721</div>
+    </div>
+
+    <div class="confirm-steps">
+      <div class="confirm-step">
+        <div class="confirm-step-icon">📧</div>
+        <h4>Confirmation Sent</h4>
+        <p>A confirmation email has been sent to alex.johnson@email.com</p>
+      </div>
+      <div class="confirm-step">
+        <div class="confirm-step-icon">👀</div>
+        <h4>Review Period</h4>
+        <p>Expect a response within 5–7 business days of your application.</p>
+      </div>
+      <div class="confirm-step">
+        <div class="confirm-step-icon">📊</div>
+        <h4>Track Progress</h4>
+        <p>Monitor your application status live in your dashboard.</p>
+      </div>
+    </div>
+
+    <div class="confirm-actions">
+      <button class="btn-primary" onclick="goTo(4)">Track My Application &rarr;</button>
+      <button class="btn-secondary" onclick="goTo(1)">Browse More Jobs</button>
+    </div>
+  </div>
+</div>
+
+<div class="toast" id="toast">
+  <div class="toast-dot"></div>
+  <span id="toast-msg">Done!</span>
+</div>
+
+<script src="assets/js/script.js"></script>
+</body>
+</html>
