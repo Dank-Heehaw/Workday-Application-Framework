@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Workday - Review Application</title>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="assets/css/style.css">
+</head>
+<body>
+
+<div class="screen active" id="screen-7">
+  <nav>
+    <a class="nav-logo" href="index.html" aria-label="Go to home">
+      <img class="nav-logo-img" src="assets/images/Workday_Logo_0.svg" alt="Workday">
+    </a>
+    <div class="nav-links">
+      <button type="button" class="nav-link-btn" onclick="goTo(3)">&larr; Back</button>
+      <button type="button" class="nav-link-btn" onclick="goTo(4)">My Applications</button>
+    </div>
+  </nav>
+
+  <div class="progress-bar-wrap">
+    <div class="progress-steps">
+      <div class="step-item done">
+        <div class="step-circle">✓</div>
+        <span class="step-label">Your Info</span>
+      </div>
+      <div class="step-item done">
+        <div class="step-circle">✓</div>
+        <span class="step-label">Documents</span>
+      </div>
+      <div class="step-item active">
+        <div class="step-circle">3</div>
+        <span class="step-label">Review</span>
+      </div>
+      <div class="step-item">
+        <div class="step-circle">4</div>
+        <span class="step-label">Submit</span>
+      </div>
+    </div>
+  </div>
+
+  <div class="main-narrow">
+    <div class="form-section">
+      <div class="section-title">Review Your Application</div>
+      <div class="profile-import-card">
+        <div class="profile-import-info">
+          <h4>Workday Sana final check complete</h4>
+          <p>Everything required is present. Sana suggests highlighting one measurable outcome in your cover letter for stronger impact.</p>
+        </div>
+        <button class="btn-primary btn-import" onclick="showToast('Sana review refreshed')">Re-run Sana Review</button>
+      </div>
+    </div>
+
+    <div class="form-section">
+      <div class="section-title">Job and Candidate Information</div>
+      <div class="uploaded-file">
+        <div class="file-info">
+          <div class="file-name">Role</div>
+          <div class="file-size">Senior UX Designer · Workday · Toronto, ON</div>
+        </div>
+      </div>
+      <div class="uploaded-file">
+        <div class="file-info">
+          <div class="file-name">Applicant</div>
+          <div class="file-size">Alex Johnson · alex.johnson@email.com · +1 (416) 000-0000</div>
+        </div>
+      </div>
+      <div class="uploaded-file">
+        <div class="file-info">
+          <div class="file-name">Work Eligibility</div>
+          <div class="file-size">Authorized to work in Canada · Earliest start date: April 15, 2026</div>
+        </div>
+      </div>
+    </div>
+
+    <div class="form-section">
+      <div class="section-title">Attached Documents</div>
+      <div class="uploaded-file">
+        <div class="file-icon" aria-hidden="true">
+          <img src="assets/images/wd-icon-document-alt.svg" alt="">
+        </div>
+        <div class="file-info">
+          <div class="file-name">Alex_Johnson_Resume_2026.pdf</div>
+          <div class="file-size">PDF · 284 KB · Resume parsed by Workday Sana</div>
+        </div>
+        <div class="file-check">✓</div>
+      </div>
+      <div class="uploaded-file">
+        <div class="file-icon" aria-hidden="true">
+          <img src="assets/images/wd-icon-folder-plus.svg" alt="">
+        </div>
+        <div class="file-info">
+          <div class="file-name">Portfolio URL</div>
+          <div class="file-size">https://alexjohnson.design · Sana extracted project themes</div>
+        </div>
+        <div class="file-check">✓</div>
+      </div>
+      <div class="uploaded-file">
+        <div class="file-icon" aria-hidden="true">
+          <img src="assets/images/wd-icon-mail.svg" alt="">
+        </div>
+        <div class="file-info">
+          <div class="file-name">Cover Letter</div>
+          <div class="file-size">Included in application details · tone and clarity reviewed by Sana</div>
+        </div>
+        <div class="file-check">✓</div>
+      </div>
+    </div>
+
+    <div class="form-actions">
+      <button class="btn-ghost" onclick="goTo(3)">&larr; Back to Documents</button>
+      <button class="btn-primary" onclick="goTo(5)">Submit Application &rarr;</button>
+    </div>
+  </div>
+</div>
+
+<div class="toast" id="toast">
+  <div class="toast-dot"></div>
+  <span id="toast-msg">Done!</span>
+</div>
+
+<script src="assets/js/script.js"></script>
+</body>
+</html>

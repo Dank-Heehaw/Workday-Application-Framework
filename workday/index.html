@@ -1,223 +1,257 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Workday — Candidate Experience Redesign</title>
-<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="assets/css/style.css">
-<script type="text/javascript" src="//script.crazyegg.com/pages/scripts/0132/5392.js" async="async" ></script>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Workday — Candidate Experience Redesign</title>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="assets/css/style.css">
+  <script type="text/javascript">
+    (function (c, l, a, r, i, t, y) {
+      c[a] = c[a] || function () { (c[a].q = c[a].q || []).push(arguments) };
+      t = l.createElement(r); t.async = 1; t.src = "https://www.clarity.ms/tag/" + i;
+      y = l.getElementsByTagName(r)[0]; y.parentNode.insertBefore(t, y);
+    })(window, document, "clarity", "script", "w32ppafo9n");
+  </script>
 </head>
+
 <body>
 
-<div class="workday-top-stripe" aria-hidden="true">
-  <span class="stripe-yellow"></span>
-  <span class="stripe-orange"></span>
-  <span class="stripe-blue"></span>
-</div>
-
-<div class="screen active" id="screen-1">
-  <nav>
-    <a class="nav-logo" href="index.html" aria-label="Go to home">
-      <img class="nav-logo-img" src="assets/images/Workday_Logo_0.svg" alt="Workday">
-    </a>
-    <div class="nav-links">
-      <button type="button" class="nav-link-btn" onclick="goTo(4)">My Applications</button>
-      <button type="button" class="nav-link-btn" onclick="goTo(6)">Profile</button>
-      <button class="nav-btn js-signin-trigger" type="button" onclick="toggleSignInModal(true)">Sign In</button>
-    </div>
-  </nav>
-
-  <header class="hero-search">
-    <h1 class="hero-title">Find your <em>next role.</em></h1>
-    <p class="hero-sub">Explore Workday and Workday customer opportunities in one streamlined experience.</p>
-    <form class="search-bar" role="search">
-      <div class="search-segment">
-        <svg width="18" height="18" fill="none" viewBox="0 0 24 24" stroke="#B0B5C3" stroke-width="2" aria-hidden="true"><circle cx="11" cy="11" r="8"/><path d="M21 21l-4.35-4.35"/></svg>
-        <input type="text" aria-label="Search jobs" placeholder="Job title, keyword, or company" value="UX Designer">
-      </div>
-      <div class="search-divider"></div>
-      <div class="search-segment">
-        <svg width="18" height="18" fill="none" viewBox="0 0 24 24" stroke="#B0B5C3" stroke-width="2" aria-hidden="true"><path d="M12 22s7-4.35 7-11a7 7 0 1 0-14 0c0 6.65 7 11 7 11z"/><circle cx="12" cy="11" r="2.6"/></svg>
-        <input type="text" aria-label="Search location" placeholder="Location" value="Toronto, ON">
-      </div>
-      <div class="search-divider"></div>
-      <button type="button" class="btn-primary btn-search">Search</button>
-    </form>
-  </header>
-
-  <div class="main">
-    <div class="filters-row">
-      <span class="filter-label">Filter by:</span>
-      <span class="filter-chip active">All Jobs</span>
-      <span class="filter-chip">Full-time</span>
-      <span class="filter-chip">Remote</span>
-      <span class="filter-chip">Entry Level</span>
-      <span class="filter-chip">Mid-Senior</span>
-      <span class="filter-chip">$60K+</span>
-    </div>
-
-    <div class="results-header">
-      <p class="results-count">Showing <strong>247 results</strong> for "UX Designer" near Toronto</p>
-      <select class="results-sort">
-        <option>Most Relevant</option>
-        <option>Most Recent</option>
-        <option>Salary High-Low</option>
-      </select>
-    </div>
-
-    <section class="job-grid" aria-label="Available UX design jobs">
-      <article class="job-card">
-        <div class="job-card-header">
-          <img class="company-logo-img" src="assets/images/Workday_Logo_0.svg" alt="Workday logo">
-          <span class="match-score">● 94% match</span>
-        </div>
-        <h2 class="job-title">Senior UX Designer</h2>
-        <div class="job-company">Workday · Toronto, ON</div>
-        <div class="job-meta">
-          <span class="tag tag-blue">Full-time</span>
-          <span class="tag tag-orange">Hybrid</span>
-          <span class="tag tag-green">$90–115K</span>
-        </div>
-        <p class="job-desc">Lead design efforts for our talent acquisition suite. Shape how millions of candidates experience our platform.</p>
-        <div class="job-footer">
-          <span class="job-posted">Posted 2 days ago</span>
-          <button type="button" class="btn-primary btn-job-action" onclick="goTo(2)">Apply Now →</button>
-        </div>
-      </article>
-
-      <article class="job-card">
-        <div class="job-card-header">
-          <img class="company-logo-img" src="assets/images/CIBC_logo_2021.svg" alt="CIBC logo">
-          <span class="match-score">● 88% match</span>
-        </div>
-        <h2 class="job-title">UX/Product Designer</h2>
-        <div class="job-company">CIBC · Toronto, ON (Hybrid)</div>
-        <div class="job-meta">
-          <span class="tag tag-blue">Full-time</span>
-          <span class="tag tag-orange">Hybrid</span>
-          <span class="tag tag-orange">$85–110K</span>
-        </div>
-        <p class="job-desc">Craft secure and intuitive digital banking journeys for personal and commercial clients across Canada.</p>
-        <div class="job-footer">
-          <span class="job-posted">Posted 5 days ago</span>
-          <button type="button" class="btn-secondary btn-job-action">View Job</button>
-        </div>
-      </article>
-
-      <article class="job-card">
-        <div class="job-card-header">
-          <img class="company-logo-img" src="assets/images/RBC_Royal_Bank.svg" alt="RBC logo">
-          <span class="match-score">● 81% match</span>
-        </div>
-        <h2 class="job-title">Interaction Designer</h2>
-        <div class="job-company">RBC · Toronto, ON</div>
-        <div class="job-meta">
-          <span class="tag tag-blue">Full-time</span>
-          <span class="tag tag-orange">Hybrid</span>
-          <span class="tag tag-green">$78–98K</span>
-        </div>
-        <p class="job-desc">Redesign digital banking touchpoints for 17M+ customers. Deep focus on accessibility and inclusive design.</p>
-        <div class="job-footer">
-          <span class="job-posted">Posted 1 week ago</span>
-          <button type="button" class="btn-secondary btn-job-action">View Job</button>
-        </div>
-      </article>
-
-      <article class="job-card">
-        <div class="job-card-header">
-          <img class="company-logo-img" src="assets/images/Loblaw_Companies_Limited_logo_EN.svg" alt="Loblaw logo">
-          <span class="match-score">● 79% match</span>
-        </div>
-        <h2 class="job-title">Product Designer, Employee Experience</h2>
-        <div class="job-company">Loblaw Companies · Brampton, ON</div>
-        <div class="job-meta">
-          <span class="tag tag-blue">Full-time</span>
-          <span class="tag tag-orange">On-site</span>
-          <span class="tag tag-green">$82–104K</span>
-        </div>
-        <p class="job-desc">Design internal HR and talent workflows that support large-scale hiring and workforce operations.</p>
-        <div class="job-footer">
-          <span class="job-posted">Posted 4 days ago</span>
-          <button type="button" class="btn-secondary btn-job-action">View Job</button>
-        </div>
-      </article>
-    </section>
+  <div class="workday-top-stripe" aria-hidden="true">
+    <span class="stripe-yellow"></span>
+    <span class="stripe-orange"></span>
+    <span class="stripe-blue"></span>
   </div>
-</div>
 
-<div class="signin-modal" id="signin-modal" aria-hidden="true">
-  <div class="signin-modal-dialog" role="dialog" aria-modal="true" aria-label="Workday sign in">
-    <button class="signin-close-btn" type="button" onclick="toggleSignInModal(false)" aria-label="Close sign in">×</button>
+  <div class="screen active" id="screen-1">
+    <nav>
+      <a class="nav-logo" href="index.html" aria-label="Go to home">
+        <img class="nav-logo-img" src="assets/images/Workday_Logo_0.svg" alt="Workday">
+      </a>
+      <div class="nav-links">
+        <button type="button" class="nav-link-btn" onclick="goTo(4)">My Applications</button>
+        <button type="button" class="nav-link-btn" onclick="goTo(6)">Profile</button>
+        <button class="nav-btn js-signin-trigger" type="button" onclick="toggleSignInModal(true)">Sign In</button>
+      </div>
+    </nav>
 
-    <div class="signin-view active" id="signin-social-view">
-      <img class="signin-logo" src="assets/images/Workday_Logo_0.svg" alt="Workday">
-      <h2>Sign In</h2>
-      <p class="signin-copy">Welcome! Create an account to manage your applications with us. Account creation and use is subject to the <span class="signin-hover-text">Workday Recruitment Privacy Statement</span>.</p>
-
-      <button type="button" class="signin-provider-btn">
-        <span class="signin-provider-icon" aria-hidden="true">
-          <svg viewBox="0 0 24 24" role="img" focusable="false">
-            <path fill="currentColor" d="M16.37 12.17c.03 3.15 2.76 4.2 2.79 4.21-.02.07-.43 1.51-1.42 2.98-.86 1.27-1.75 2.54-3.17 2.57-1.39.03-1.84-.82-3.43-.82-1.59 0-2.09.8-3.41.85-1.37.05-2.41-1.37-3.27-2.63-1.76-2.56-3.1-7.22-1.29-10.38.9-1.57 2.5-2.56 4.24-2.59 1.32-.03 2.57.89 3.43.89.86 0 2.47-1.09 4.16-.93.71.03 2.7.29 3.98 2.15-.1.06-2.38 1.4-2.36 4.7zM14.11 4.84c.72-.87 1.2-2.08 1.06-3.29-1.03.04-2.27.69-3.01 1.56-.66.76-1.24 1.98-1.08 3.15 1.16.09 2.32-.59 3.03-1.42z"/>
+    <header class="hero-search">
+      <h1 class="hero-title">Find your <em>next role.</em></h1>
+      <p class="hero-sub">Explore Workday and Workday customer opportunities in one streamlined experience.</p>
+      <form class="search-bar" role="search">
+        <div class="search-segment">
+          <svg width="18" height="18" fill="none" viewBox="0 0 24 24" stroke="#B0B5C3" stroke-width="2"
+            aria-hidden="true">
+            <circle cx="11" cy="11" r="8" />
+            <path d="M21 21l-4.35-4.35" />
           </svg>
-        </span>
-        <span>Sign in with Apple</span>
-      </button>
-      <button type="button" class="signin-provider-btn">
-        <span class="signin-provider-icon" aria-hidden="true">
-          <svg viewBox="0 0 24 24" role="img" focusable="false">
-            <path d="M21.35 12.2c0-.7-.06-1.22-.2-1.77H12v3.34h5.37c-.11.83-.71 2.09-2.05 2.93l-.02.11 2.72 2.11.19.02c1.76-1.63 2.78-4.03 2.78-6.74z" fill="#4285F4"/>
-            <path d="M12 21.72c2.63 0 4.84-.87 6.45-2.38l-3.08-2.39c-.82.57-1.92.97-3.37.97-2.58 0-4.77-1.69-5.56-4.03l-.1.01-2.83 2.19-.03.09c1.6 3.18 4.9 5.54 8.52 5.54z" fill="#34A853"/>
-            <path d="M6.44 13.89c-.21-.62-.34-1.28-.34-1.97 0-.68.12-1.34.33-1.97l-.01-.13-2.86-2.23-.09.04A9.7 9.7 0 0 0 2.4 11.92c0 1.57.38 3.05 1.06 4.36l2.98-2.39z" fill="#FBBC05"/>
-            <path d="M12 5.93c1.83 0 3.06.79 3.76 1.45l2.75-2.68C16.83 3.13 14.63 2.12 12 2.12c-3.62 0-6.92 2.36-8.53 5.54l2.97 2.32c.8-2.34 2.99-4.05 5.56-4.05z" fill="#EA4335"/>
+          <input type="text" aria-label="Search jobs" placeholder="Job title, keyword, or company" value="UX Designer">
+        </div>
+        <div class="search-divider"></div>
+        <div class="search-segment">
+          <svg width="18" height="18" fill="none" viewBox="0 0 24 24" stroke="#B0B5C3" stroke-width="2"
+            aria-hidden="true">
+            <path d="M12 22s7-4.35 7-11a7 7 0 1 0-14 0c0 6.65 7 11 7 11z" />
+            <circle cx="12" cy="11" r="2.6" />
           </svg>
-        </span>
-        <span>Sign in with Google</span>
-      </button>
+          <input type="text" aria-label="Search location" placeholder="Location" value="Toronto, ON">
+        </div>
+        <div class="search-divider"></div>
+        <button type="button" class="btn-primary btn-search">Search</button>
+      </form>
+    </header>
 
-      <div class="signin-divider"><span>OR</span></div>
-      <button type="button" class="signin-email-btn" onclick="showEmailSignIn()">Sign in with email</button>
-    </div>
-
-    <div class="signin-view" id="signin-email-view">
-      <img class="signin-logo" src="assets/images/Workday_Logo_0.svg" alt="Workday">
-      <h2>Sign In</h2>
-
-      <div class="form-group">
-        <label class="form-label" for="modal-email">Email Address <span class="required">*</span></label>
-        <input id="modal-email" class="form-input demo-locked-input" type="email" placeholder="Email auto-fills on Sign In click" readonly tabindex="-1">
+    <div class="main">
+      <div class="filters-row">
+        <span class="filter-label">Filter by:</span>
+        <span class="filter-chip active">All Jobs</span>
+        <span class="filter-chip">Full-time</span>
+        <span class="filter-chip">Remote</span>
+        <span class="filter-chip">Entry Level</span>
+        <span class="filter-chip">Mid-Senior</span>
+        <span class="filter-chip">$60K+</span>
       </div>
 
-      <div class="form-group">
-        <label class="form-label" for="modal-password">Password <span class="required">*</span></label>
-        <input id="modal-password" class="form-input demo-locked-input" type="password" placeholder="Password auto-fills on Sign In click" readonly tabindex="-1">
+      <div class="results-header">
+        <p class="results-count">Showing <strong>247 results</strong> for "UX Designer" near Toronto</p>
+        <select class="results-sort">
+          <option>Most Relevant</option>
+          <option>Most Recent</option>
+          <option>Salary High-Low</option>
+        </select>
       </div>
 
-      <button class="btn-primary signin-submit" type="button" onclick="runModalSignInDemo(this)">Sign In</button>
-      <p class="signin-text-line"><span class="signin-hover-text">Don't have an account yet? Create Account</span></p>
-      <p class="signin-text-line"><span class="signin-hover-text">Forgot your password?</span></p>
-    </div>
+      <section class="job-grid" aria-label="Available UX design jobs">
+        <article class="job-card">
+          <div class="job-card-header">
+            <img class="company-logo-img" src="assets/images/Workday_Logo_0.svg" alt="Workday logo">
+            <span class="match-score">● 94% match</span>
+          </div>
+          <h2 class="job-title">Senior UX Designer</h2>
+          <div class="job-company">Workday · Toronto, ON</div>
+          <div class="job-meta">
+            <span class="tag tag-blue">Full-time</span>
+            <span class="tag tag-orange">Hybrid</span>
+            <span class="tag tag-green">$90–115K</span>
+          </div>
+          <p class="job-desc">Lead design efforts for our talent acquisition suite. Shape how millions of candidates
+            experience our platform.</p>
+          <div class="job-footer">
+            <span class="job-posted">Posted 2 days ago</span>
+            <button type="button" class="btn-primary btn-job-action" onclick="goTo(2)">Apply Now →</button>
+          </div>
+        </article>
 
-    <div class="signin-legal-text">
-      <span class="signin-hover-text">Help Center</span>
-      <span>·</span>
-      <span class="signin-hover-text">Legal</span>
-      <span>·</span>
-      <span class="signin-hover-text">Privacy</span>
-      <span>·</span>
-      <span class="signin-hover-text">Your Privacy Choices</span>
-      <span>·</span>
-      <span class="signin-hover-text">Cookie Preferences</span>
-      <span class="signin-copyright">© 2026 Workday, Inc.</span>
+        <article class="job-card">
+          <div class="job-card-header">
+            <img class="company-logo-img" src="assets/images/CIBC_logo_2021.svg" alt="CIBC logo">
+            <span class="match-score">● 88% match</span>
+          </div>
+          <h2 class="job-title">UX/Product Designer</h2>
+          <div class="job-company">CIBC · Toronto, ON (Hybrid)</div>
+          <div class="job-meta">
+            <span class="tag tag-blue">Full-time</span>
+            <span class="tag tag-orange">Hybrid</span>
+            <span class="tag tag-orange">$85–110K</span>
+          </div>
+          <p class="job-desc">Craft secure and intuitive digital banking journeys for personal and commercial clients
+            across Canada.</p>
+          <div class="job-footer">
+            <span class="job-posted">Posted 5 days ago</span>
+            <button type="button" class="btn-secondary btn-job-action">View Job</button>
+          </div>
+        </article>
+
+        <article class="job-card">
+          <div class="job-card-header">
+            <img class="company-logo-img" src="assets/images/RBC_Royal_Bank.svg" alt="RBC logo">
+            <span class="match-score">● 81% match</span>
+          </div>
+          <h2 class="job-title">Interaction Designer</h2>
+          <div class="job-company">RBC · Toronto, ON</div>
+          <div class="job-meta">
+            <span class="tag tag-blue">Full-time</span>
+            <span class="tag tag-orange">Hybrid</span>
+            <span class="tag tag-green">$78–98K</span>
+          </div>
+          <p class="job-desc">Redesign digital banking touchpoints for 17M+ customers. Deep focus on accessibility and
+            inclusive design.</p>
+          <div class="job-footer">
+            <span class="job-posted">Posted 1 week ago</span>
+            <button type="button" class="btn-secondary btn-job-action">View Job</button>
+          </div>
+        </article>
+
+        <article class="job-card">
+          <div class="job-card-header">
+            <img class="company-logo-img" src="assets/images/Loblaw_Companies_Limited_logo_EN.svg" alt="Loblaw logo">
+            <span class="match-score">● 79% match</span>
+          </div>
+          <h2 class="job-title">Product Designer, Employee Experience</h2>
+          <div class="job-company">Loblaw Companies · Brampton, ON</div>
+          <div class="job-meta">
+            <span class="tag tag-blue">Full-time</span>
+            <span class="tag tag-orange">On-site</span>
+            <span class="tag tag-green">$82–104K</span>
+          </div>
+          <p class="job-desc">Design internal HR and talent workflows that support large-scale hiring and workforce
+            operations.</p>
+          <div class="job-footer">
+            <span class="job-posted">Posted 4 days ago</span>
+            <button type="button" class="btn-secondary btn-job-action">View Job</button>
+          </div>
+        </article>
+      </section>
     </div>
   </div>
-</div>
 
-<div class="toast" id="toast">
-  <div class="toast-dot"></div>
-  <span id="toast-msg">Done!</span>
-</div>
+  <div class="signin-modal" id="signin-modal" aria-hidden="true">
+    <div class="signin-modal-dialog" role="dialog" aria-modal="true" aria-label="Workday sign in">
+      <button class="signin-close-btn" type="button" onclick="toggleSignInModal(false)"
+        aria-label="Close sign in">×</button>
 
-<script src="assets/js/script.js"></script>
+      <div class="signin-view active" id="signin-social-view">
+        <img class="signin-logo" src="assets/images/Workday_Logo_0.svg" alt="Workday">
+        <h2>Sign In</h2>
+        <p class="signin-copy">Welcome! Create an account to manage your applications with us. Account creation and use
+          is subject to the <span class="signin-hover-text">Workday Recruitment Privacy Statement</span>.</p>
+
+        <button type="button" class="signin-provider-btn">
+          <span class="signin-provider-icon" aria-hidden="true">
+            <svg viewBox="0 0 24 24" role="img" focusable="false">
+              <path fill="currentColor"
+                d="M16.37 12.17c.03 3.15 2.76 4.2 2.79 4.21-.02.07-.43 1.51-1.42 2.98-.86 1.27-1.75 2.54-3.17 2.57-1.39.03-1.84-.82-3.43-.82-1.59 0-2.09.8-3.41.85-1.37.05-2.41-1.37-3.27-2.63-1.76-2.56-3.1-7.22-1.29-10.38.9-1.57 2.5-2.56 4.24-2.59 1.32-.03 2.57.89 3.43.89.86 0 2.47-1.09 4.16-.93.71.03 2.7.29 3.98 2.15-.1.06-2.38 1.4-2.36 4.7zM14.11 4.84c.72-.87 1.2-2.08 1.06-3.29-1.03.04-2.27.69-3.01 1.56-.66.76-1.24 1.98-1.08 3.15 1.16.09 2.32-.59 3.03-1.42z" />
+            </svg>
+          </span>
+          <span>Sign in with Apple</span>
+        </button>
+        <button type="button" class="signin-provider-btn">
+          <span class="signin-provider-icon" aria-hidden="true">
+            <svg viewBox="0 0 24 24" role="img" focusable="false">
+              <path
+                d="M21.35 12.2c0-.7-.06-1.22-.2-1.77H12v3.34h5.37c-.11.83-.71 2.09-2.05 2.93l-.02.11 2.72 2.11.19.02c1.76-1.63 2.78-4.03 2.78-6.74z"
+                fill="#4285F4" />
+              <path
+                d="M12 21.72c2.63 0 4.84-.87 6.45-2.38l-3.08-2.39c-.82.57-1.92.97-3.37.97-2.58 0-4.77-1.69-5.56-4.03l-.1.01-2.83 2.19-.03.09c1.6 3.18 4.9 5.54 8.52 5.54z"
+                fill="#34A853" />
+              <path
+                d="M6.44 13.89c-.21-.62-.34-1.28-.34-1.97 0-.68.12-1.34.33-1.97l-.01-.13-2.86-2.23-.09.04A9.7 9.7 0 0 0 2.4 11.92c0 1.57.38 3.05 1.06 4.36l2.98-2.39z"
+                fill="#FBBC05" />
+              <path
+                d="M12 5.93c1.83 0 3.06.79 3.76 1.45l2.75-2.68C16.83 3.13 14.63 2.12 12 2.12c-3.62 0-6.92 2.36-8.53 5.54l2.97 2.32c.8-2.34 2.99-4.05 5.56-4.05z"
+                fill="#EA4335" />
+            </svg>
+          </span>
+          <span>Sign in with Google</span>
+        </button>
+
+        <div class="signin-divider"><span>OR</span></div>
+        <button type="button" class="signin-email-btn" onclick="showEmailSignIn()">Sign in with email</button>
+      </div>
+
+      <div class="signin-view" id="signin-email-view">
+        <img class="signin-logo" src="assets/images/Workday_Logo_0.svg" alt="Workday">
+        <h2>Sign In</h2>
+
+        <div class="form-group">
+          <label class="form-label" for="modal-email">Email Address <span class="required">*</span></label>
+          <input id="modal-email" class="form-input demo-locked-input" type="email"
+            placeholder="Email auto-fills on Sign In click" readonly tabindex="-1">
+        </div>
+
+        <div class="form-group">
+          <label class="form-label" for="modal-password">Password <span class="required">*</span></label>
+          <input id="modal-password" class="form-input demo-locked-input" type="password"
+            placeholder="Password auto-fills on Sign In click" readonly tabindex="-1">
+        </div>
+
+        <button class="btn-primary signin-submit" type="button" onclick="runModalSignInDemo(this)">Sign In</button>
+        <p class="signin-text-line"><span class="signin-hover-text">Don't have an account yet? Create Account</span></p>
+        <p class="signin-text-line"><span class="signin-hover-text">Forgot your password?</span></p>
+      </div>
+
+      <div class="signin-legal-text">
+        <span class="signin-hover-text">Help Center</span>
+        <span>·</span>
+        <span class="signin-hover-text">Legal</span>
+        <span>·</span>
+        <span class="signin-hover-text">Privacy</span>
+        <span>·</span>
+        <span class="signin-hover-text">Your Privacy Choices</span>
+        <span>·</span>
+        <span class="signin-hover-text">Cookie Preferences</span>
+        <span class="signin-copyright">© 2026 Workday, Inc.</span>
+      </div>
+    </div>
+  </div>
+
+  <div class="toast" id="toast">
+    <div class="toast-dot"></div>
+    <span id="toast-msg">Done!</span>
+  </div>
+
+  <script src="assets/js/script.js"></script>
 </body>
+
 </html>

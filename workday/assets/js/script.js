@@ -28,7 +28,8 @@ function goTo(n) {
     3: 'documents.html',
     4: 'applications.html',
     5: 'confirmation.html',
-    6: 'profile.html'
+    6: 'profile.html',
+    7: 'review.html'
   };
 
   __agentLog('pre-fix', 'H5', 'workday/index.html:goTo', 'Navigation triggered', { screen: n });
